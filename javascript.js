@@ -1,9 +1,38 @@
-//runs game 5 times
-function game(){
-    for(let i=0; i<5; i++){
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    }
-}
+const resultsDiv = document.querySelector('#results');
+
+const rock =  document.querySelector('#rock');
+console.log(rock);
+const rockChoice = "Rock";
+rock.addEventListener('click', playRock);
+
+function playRock(){
+    let results = playRound(getComputerChoice(), "Rock");
+    resultsDiv.textContent = results;
+    console.log(results);
+};
+
+const paper =  document.querySelector('#paper');
+console.log(paper);
+paper.addEventListener('click', playPaper);
+
+function playPaper(){
+    let results = playRound(getComputerChoice(), "Paper");
+    console.log(results);
+    resultsDiv.textContent = results;
+};
+
+const scissors =  document.querySelector('#scissors');
+console.log(scissors);
+scissors.addEventListener('click', playScissors);
+
+function playScissors(){
+    let results = playRound(getComputerChoice(), "Scissors");
+    console.log(results);
+    resultsDiv.textContent = results;
+};
+
+
+
 
 function getComputerChoice(){
     let num = Math.floor(Math.random()*3);
@@ -65,5 +94,3 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
-game();
