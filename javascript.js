@@ -1,3 +1,4 @@
+//runs game 5 times
 function game(){
     for(let i=0; i<5; i++){
         console.log(playRound(getComputerChoice(), getPlayerChoice()));
